@@ -9,18 +9,16 @@ on:
     - cron: '*/13 * * * *'
   watch:
     types: started
-  repository_dispatch:
-    types: jrtt
+
 jobs:
   build:
-
     runs-on: ubuntu-latest
     if: github.event.repository.owner.id == github.event.sender.id
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        run: |
         with:
-          repository: ZhiYi-N/script
+          git clone https://github.com/ZhiYi-N/script/ ~/script
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
@@ -34,6 +32,7 @@ jobs:
           key: ${{ runner.os }}-${{ env.cache-name }}-${{ hashFiles('package-lock.json') }} # 使用 package-lock.json 的 Hash 作为缓存的 key。也可以使用 package.json 代替
       - name: npm install
         run: |
+		  cd ~/script
           npm install
       - name: '运行 【今日头条极速版】'
         run: |
