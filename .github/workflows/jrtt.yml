@@ -22,19 +22,13 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 12.x
-      - name: Cache node_modules
-        uses: actions/cache@v2 # 使用 GitHub 官方缓存 Action。
-        env:
-          cache-name: cache-node-modules
-        with:
-          path: node_modules
-          key: ${{ runner.os }}-${{ env.cache-name }}-${{ hashFiles('package-lock.json') }} # 使用 package-lock.json 的 Hash 作为缓存的 key。也可以使用 package.json 代替
       - name: npm install
         run: |
           cd ~/script
           npm install
       - name: '运行 【今日头条极速版】'
         run: |
+          cd ~/script
           node jrtt.js
         env:
           JRTTSIGNURL: ${{ secrets.JRTTSIGNURL }}
