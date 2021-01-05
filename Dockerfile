@@ -23,4 +23,4 @@ RUN crontab /qx-scripts/crontab_list.sh
 
 WORKDIR /qx-scripts
 
- CMD ["node"]
+CMD ["node"]
