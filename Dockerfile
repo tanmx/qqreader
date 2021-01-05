@@ -11,11 +11,9 @@ RUN git clone https://github.com/tanmx/qx-scripts.git /qx-scripts \
         && cd /qx-scripts \
         && mkdir logs
 
-RUN git clone https://github.com/Sunert/Scripts.git /qx-scripts/Scripts \
-		&& cd /qx-scripts/Sunert-Scripts \
-		&& npm install
+RUN git clone https://github.com/Sunert/Scripts.git /qx-scripts/Sunert-Scripts 
 
 RUN crontab /qx-scripts/crontab_list.sh
 
 WORKDIR /qx-scripts
-CMD ["node"]
+ENTRYPOINT default_task.sh
