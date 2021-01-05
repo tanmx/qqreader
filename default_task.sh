@@ -4,3 +4,4 @@ for i in Sunert-Scripts ZhiYi-N-script; do
 git -C /qx-scripts/${i} pull
 npm install --prefix /qx-scripts/${i}
 done
+crontab /qx-scripts/crontab_list.sh
