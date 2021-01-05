@@ -11,7 +11,7 @@ RUN git clone https://github.com/tanmx/qx-scripts.git /qx-scripts \
         && cd /qx-scripts \
         && mkdir logs
 
-RUN git clone https://github.com/Scripts.git /qx-scripts/Scripts \
+RUN git clone https://github.com/Sunert/Scripts.git /qx-scripts/Scripts \
 		&& cd /qx-scripts/Scripts \
 		&& npm install
 
