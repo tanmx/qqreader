@@ -4,4 +4,4 @@
 50 23 */3 * * rm -rf /qx-scripts/logs/*.log
 
 #聚看点
-*/20 */2 * * * node /qx-scripts/Scripts/Task/jukan.js >> /scripts/logs/jukan.log 2>&1
+*/20 */2 * * * node /qx-scripts/Sunert-Scripts/Task/jukan.js >> /scripts/logs/jukan.log 2>&1
