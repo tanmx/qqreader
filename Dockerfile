@@ -12,7 +12,7 @@ RUN git clone https://github.com/tanmx/qx-scripts.git /qx-scripts \
         && mkdir logs
 
 RUN git clone https://github.com/Sunert/Scripts.git /qx-scripts/Scripts \
-		&& cd /qx-scripts/Scripts \
+		&& cd /qx-scripts/Sunert-Scripts \
 		&& npm install
 
 RUN crontab /qx-scripts/crontab_list.sh
