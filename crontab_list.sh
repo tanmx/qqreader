@@ -5,3 +5,5 @@
 
 #聚看点
 */20 */2 * * * node /qx-scripts/Sunert-Scripts/Task/jukan.js >> /scripts/logs/jukan.log 2>&1
+#抖音极速版
+*/5 * * * * node /qx-scripts/ZhiYi-N-script/dyjsb.js >> /scripts/logs/dyjsb.log 2>&1
