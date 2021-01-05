@@ -16,4 +16,4 @@ RUN git clone https://github.com/Sunert/Scripts.git /qx-scripts/Sunert-Scripts
 RUN crontab /qx-scripts/crontab_list.sh
 
 WORKDIR /qx-scripts
-ENTRYPOINT /qx-scripts/default_task.sh
+ENTRYPOINT ["sh", "/qx-scripts/default_task.sh"]
