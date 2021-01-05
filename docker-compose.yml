@@ -1,0 +1,21 @@
+jd_scripts:
+  image: tanmx/qx-scripts
+  # 配置服务器资源约束。此例子中服务被限制为使用内存不超过200M以及cpu不超过0.2（单核的20%）
+  # 经过实际测试，建议不低于200M
+  # deploy:
+  #   resources:
+  #     limits:
+  #       cpus: '0.2'
+  #       memory: 200M
+  container_name: qx-scripts
+  restart: always
+  volumes:
+    - ./logs:/qx-scripts/logs
+  tty: true
+  environment:
+    # 注意环境变量填写值的时候一律不需要引号（""或者''）下面这些只是事例，根据自己的需求增加删除
+    #telegram机器人通知
+    - TG_BOT_TOKEN=
+    - TG_USER_ID=
+    #聚看点
+    - JUKAN_BODY=
