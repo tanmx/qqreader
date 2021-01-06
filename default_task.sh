@@ -4,7 +4,7 @@ CONFIG=/qx-scripts/repositories/config
 git -C /qx-scripts pull
 
 echo "下载代码"
-while read LINE
+while read LINE || [[ -n ${LINE} ]]
 do
   NAME=`echo $LINE | awk '{print $1}'`
   REPO=`echo $LINE | awk '{print $2}'`
