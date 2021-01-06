@@ -16,7 +16,7 @@ done < ${CONFIG}
 echo "定时任务更新代码，git 拉取最新代码，并安装更新依赖..."
 for i in `ls /qx-scripts/repositories/`
 do
-  if [ -d /qx-scripts/repositories/${i} ]；then
+  if [ -d /qx-scripts/repositories/${i} ];then
 	git -C /qx-scripts/repositories/${i} pull
 	npm install --prefix /qx-scripts/repositories/${i}
   fi
