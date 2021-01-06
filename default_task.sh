@@ -1,6 +1,8 @@
 #!/bin/sh
 set -e
 CONFIG=/qx-scripts/repositories/config
+git -C /qx-scripts pull
+
 echo "下载代码"
 while read LINE
 do
@@ -12,7 +14,6 @@ do
 done < ${CONFIG}
 
 echo "定时任务更新代码，git 拉取最新代码，并安装更新依赖..."
-git -C /qx-scripts pull
 while read LINE
 do
   NAME=`echo $LINE | awk '{print $1}'`
