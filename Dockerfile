@@ -9,12 +9,7 @@ RUN set -ex \
 
 RUN git clone https://github.com/tanmx/qx-scripts.git /qx-scripts \
         && cd /qx-scripts \
-        && mkdir logs
-
-RUN git clone https://github.com/Sunert/Scripts.git /qx-scripts/Scripts \
-		&& cd /qx-scripts/Scripts \
-		&& npm install
-
-RUN crontab /qx-scripts/crontab_list.sh
+        && mkdir logs 
 
 WORKDIR /qx-scripts
+ENTRYPOINT ["sh", "docker_entrypoint.sh"]

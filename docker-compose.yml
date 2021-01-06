@@ -19,10 +19,3 @@ jd_scripts:
     - TG_USER_ID=
     #聚看点
     - JUKAN_BODY=
-   command:
-    - /bin/sh
-    - -c
-    - |
-    crond
-    default_tash.sh
-    node
