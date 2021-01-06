@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 set -e
 CONFIG=/qx-scripts/repositories/config
 git -C /qx-scripts pull
