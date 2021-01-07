@@ -22,7 +22,7 @@ jobs:
     steps:
       - name: Checkout
         run: |
-          git clone https://github.com/Tartarus2014/Script.git ~/Script
+          git clone https://github.com/tanmx/QuantumultX.git ~/QuantumultX
       - name: Use Node.js 12.x
         uses: actions/setup-node@v1
         with:
@@ -30,13 +30,13 @@ jobs:
       - name: npm install
         if: env.QQREAD_TIMEHD
         run: |
-          cd ~/Script
+          cd ~/QuantumultX/Task
           npm install
       - name: '运行 【企鹅读书】'
         if: env.QQREAD_TIMEHD
         run: |
-          cd ~/Script
-          node qqreads.js
+          cd ~/QuantumultX
+          node Task/qqreads.js
         env:
           
           PUSH_KEY: ${{ secrets.PUSH_KEY }}
