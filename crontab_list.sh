@@ -4,6 +4,6 @@
 50 23 */3 * * rm -rf /qx-scripts/logs/*.log
 
 #聚看点
-*/20 */2 * * * node /qx-scripts/repositories/Sunert-Scripts/Task/jukan.js >> /qx-scripts/logs/jukan.log 2>&1
+*/20 */2 * * * node /qx-scripts/repositories/simple202-Scripts-1/Task/jukan.js >> /qx-scripts/logs/jukan.log 2>&1
 #抖音极速版
 # */5 * * * * node /qx-scripts/repositories/ZhiYi-N-script/dyjsb.js >> /qx-scripts/logs/dyjsb.log 2>&1
