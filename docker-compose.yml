@@ -19,3 +19,8 @@ jd_scripts:
     - TG_USER_ID=
     #聚看点
     - JUKAN_BODY=
+    #中青看点
+    - YOUTH_HEADER=
+    - YOUTH_ARTBODY=
+    - YOUTH_REDBODY=
+    - YOUTH_TIME=
