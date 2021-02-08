@@ -7,6 +7,8 @@
 */20 */2 * * * node /qx-scripts/repositories/Sunert-Scripts/Task/jukan.js >> /qx-scripts/logs/jukan.log 2>&1
 #中青看点
 */7 */2 * * * node /qx-scripts/repositories/Sunert-Scripts/Task/youth.js >> /qx-scripts/logs/youth.log 2>&1
+#喜玛拉雅
+*/30 * * * * python3 /qx-scripts/repositories/Zero-S1-xmly_speed/xmly_speed.py >> /qx-scripts/logs/xmly_speed.log 2>&1
 
 #抖音极速版
 # */5 * * * * node /qx-scripts/repositories/ZhiYi-N-script/dyjsb.js >> /qx-scripts/logs/dyjsb.log 2>&1
