@@ -24,3 +24,5 @@ jd_scripts:
     - YOUTH_ARTBODY=
     - YOUTH_REDBODY=
     - YOUTH_TIME=
+    #喜玛拉雅
+    - XMLY_SPEED_COOKIE=
