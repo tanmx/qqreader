@@ -1,6 +1,6 @@
 #!/bin/bash
 set -e
-CONFIG=/qx-scripts/repositories/config
+CONFIG=/qx-scripts/config
 git -C /qx-scripts pull
 
 echo "下载代码"
@@ -14,7 +14,7 @@ do
 done < ${CONFIG}
 
 echo "定时任务更新代码，git 拉取最新代码，并安装更新依赖..."
-for i in `ls /qx-scripts/repositories/ -F | grep '/$'`
+for i in `ls /qx-scripts/repositories/`
 do
   if [ ${i} != 'Zero-S1-xmly_speed' ];then
 	git -C /qx-scripts/repositories/${i} pull

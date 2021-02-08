@@ -38,6 +38,6 @@ https://(aweme-\w+|aweme).snssdk.com/luckycat/aweme/v1/task/done/read? url scrip
 https://(aweme-\w+|aweme).snssdk.com/luckycat/aweme/v1/task/walk/step_submit? - script-request-header https://raw.githubusercontent.com/ZhiYi-N/Private-Script/master/Scripts/dyjsb.js
 ```
 # docker node环境使用方法
-1. 把需要clone的仓库写在 repositories/config 上，格式 username空格repositories
+1. 把需要clone的仓库写在 config 上，格式 username空格repositories
 2. 在 crontab_list.sh 添加定时任务，路径为 /qx-scripts/repositories/username-repositories/xxxxxx.js
 3. 在 docker-compose.yml中增加环境变量
