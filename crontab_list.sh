@@ -9,3 +9,5 @@
 */7 */2 * * * node /qx-scripts/repositories/Sunert-Scripts/Task/youth.js >> /qx-scripts/logs/youth.log 2>&1
 #喜玛拉雅
 */30 * * * * python3 /qx-scripts/repositories/Zero-S1-xmly_speed/xmly_speed.py >> /qx-scripts/logs/xmly_speed.log 2>&1
+#笑谱视频
+*/15 8-23 * * * node /qx-scripts/repositories/ziye12-JavaScript/Task/iboxpay.js >> /qx-scripts/logs/iboxpay.log 2>&1

@@ -26,3 +26,8 @@ jd_scripts:
     - YOUTH_TIME=
     #喜玛拉雅
     - XMLY_SPEED_COOKIE=
+    #笑谱视频
+    - XP_iboxpayHEADER=
+    - XP_refreshTOKEN=
+    - XP_CASH=
+    - XP_live=
