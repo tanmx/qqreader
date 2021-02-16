@@ -12,7 +12,8 @@ do
     git clone https://github.com/${NAME}/${REPO} /qx-scripts/repositories/${NAME}-${REPO}
   fi
 done < ${CONFIG}
-
+#复制依赖文件
+cp /qx-scripts/repositories/Sunert-Scripts/Task/sendNotify.js /qx-scripts/repositories/ZhiYi-N-Private-Script/Scripts/sendNotify.js
 echo "定时任务更新代码，git 拉取最新代码，并安装更新依赖..."
 for i in `ls /qx-scripts/repositories/`
 do

@@ -13,3 +13,5 @@
 15 19 * * * node /qx-scripts/repositories/Sunert-Scripts/Task/kuaishou.js >> /qx-scripts/logs/kuaishou.log 2>&1
 #喜玛拉雅
 */30 * * * * python3 /qx-scripts/repositories/Zero-S1-xmly_speed/xmly_speed.py >> /qx-scripts/logs/xmly_speed.log 2>&1
+#今日头条极速版
+5,35 8-23 * * * node /qx-scripts/repositories/ZhiYi-N-Private-Script/Scripts/jrtt.js >> /qx-scripts/logs/jrtt.log 2>&1

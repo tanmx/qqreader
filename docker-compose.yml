@@ -32,3 +32,10 @@ jd_scripts:
     - BAIDU_TASK=true
     #快手极速版
     - KS_TOKEN=
+    #今日头条极速版
+    - JRTTSIGNURL=
+    - JRTTSIGNKEY=
+    - JRTTFARMURL=
+    - JRTTFARMKEY=
+    - JRTTREADURL=
+    - JRTTREADKEY=
