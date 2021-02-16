@@ -30,3 +30,5 @@ jd_scripts:
     - BAIDU_COOKIE=
     - BAIDU_CASH=30
     - BAIDU_TASK=true
+    #快手极速版
+    - KS_TOKEN=
