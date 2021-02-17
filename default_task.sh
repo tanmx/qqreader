@@ -14,7 +14,7 @@ do
     git clone https://github.com/${NAME}/${REPO} /qx-scripts/repositories/${NAME}-${REPO}
   fi
 done < ${CONFIG}
-#复制依赖文件
+echo "下载依赖文件"
 if [ ! -f "${SENDNOTIFY}" ];then
   wget https://raw.githubusercontent.com/ZhiYi-N/script/master/sendNotify.js -O ${SENDNOTIFY}
 fi
