@@ -13,7 +13,8 @@ do
   fi
 done < ${CONFIG}
 #复制依赖文件
-cp /qx-scripts/repositories/Sunert-Scripts/Task/sendNotify.js /qx-scripts/repositories/ZhiYi-N-Private-Script/Scripts/sendNotify.js
+wget https://raw.githubusercontent.com/ZhiYi-N/script/master/sendNotify.js -O /qx-scripts/repositories/ZhiYi-N-Private-Script/Scripts/sendNotify.js
+wget https://raw.githubusercontent.com/ZhiYi-N/script/master/package.json -O /qx-scripts/repositories/ZhiYi-N-Private-Script/package.json
 echo "定时任务更新代码，git 拉取最新代码，并安装更新依赖..."
 for i in `ls /qx-scripts/repositories/`
 do
