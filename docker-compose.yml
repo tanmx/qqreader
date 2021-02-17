@@ -39,3 +39,6 @@ jd_scripts:
     - JRTTFARMKEY=
     - JRTTREADURL=
     - JRTTREADKEY=
+    #快看点
+    - KKDHEADER=
+    - KKDCOOKIE=
