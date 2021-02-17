@@ -16,10 +16,10 @@ do
 done < ${CONFIG}
 #复制依赖文件
 if [ ! -f "${SENDNOTIFY}" ];then
-	wget https://raw.githubusercontent.com/ZhiYi-N/script/master/sendNotify.js -O ${SENDNOTIFY}
+  wget https://raw.githubusercontent.com/ZhiYi-N/script/master/sendNotify.js -O ${SENDNOTIFY}
 fi
 if [ ! -f "${PACKAGE}" ];then
-	wget https://raw.githubusercontent.com/ZhiYi-N/script/master/package.json -O ${PACKAGE}
+  wget https://raw.githubusercontent.com/ZhiYi-N/script/master/package.json -O ${PACKAGE}
 fi
 echo "定时任务更新代码，git 拉取最新代码，并安装更新依赖..."
 for i in `ls /qx-scripts/repositories/`
