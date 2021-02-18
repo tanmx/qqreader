@@ -8,8 +8,7 @@ RUN set -ex \
         && ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
         && echo "Asia/Shanghai" > /etc/timezone \
         && rm -rf /var/cache/apk/* \
-        && sed -i 's#/root:/bin/ash#/root:/bin/bash#g' /etc/passwd \
-        && source /etc/profile
+        && sed -i 's#/root:/bin/ash#/root:/bin/bash#g' /etc/passwd
 
 RUN git clone https://github.com/tanmx/qx-scripts.git /qx-scripts \
         && cd /qx-scripts \
