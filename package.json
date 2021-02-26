@@ -1,0 +1,26 @@
+{
+  "name": "qx-scripts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "Manga.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BlueskyClouds/My-Actions.git"
+  },
+  "keywords": [
+    "部分脚本依赖包"
+  ],
+  "author": "tanmx",
+  "license": "ISC",
+  "dependencies": {
+    "download": "^8.0.0",
+    "request": "^2.88.2",
+    "axios": "^0.1202",
+    "crypto-js": "^4.0.0",
+    "got": "^11.7.0",
+    "tough-cookie": "^4.0.0"
+  }
+}
