@@ -14,13 +14,11 @@ do
     git clone https://github.com/${NAME}/${REPO} /qx-scripts/repositories/${NAME}-${REPO}
   fi
 done < ${CONFIG}
-echo "下载依赖文件"
-if [ ! -f "${SENDNOTIFY}" ];then
-  wget https://raw.githubusercontent.com/ZhiYi-N/script/master/sendNotify.js -O ${SENDNOTIFY}
-fi
-if [ ! -f "${PACKAGE}" ];then
-  wget https://raw.githubusercontent.com/ZhiYi-N/script/master/package.json -O ${PACKAGE}
-fi
+
+echo "复制依赖文件"
+\cp /qx-scripts/package.json /qx-scripts/repositories/ZhiYi-N-Private-Script/package.json
+\cp /qx-scripts/sendNotify.js /qx-scripts/repositories/ZhiYi-N-Private-Script/Scripts/sendNotify.js
+
 echo "定时任务更新代码，git 拉取最新代码，并安装更新依赖..."
 for i in `ls /qx-scripts/repositories/`
 do
