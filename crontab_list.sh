@@ -16,5 +16,4 @@
 #今日头条极速版
 5,35 8-23 * * * node /qx-scripts/repositories/ZhiYi-N-Private-Script/Scripts/jrtt.js >> /qx-scripts/logs/jrtt.log 2>&1
 #快看点
-*/30 * * * * node /qx-scripts/repositories/ZhiYi-N-Private-Script/Scripts/kkd.js >> /qx-scripts/logs/kkd.log 2>&1
 #*/30 * * * * node /qx-scripts/repositories/ZhiYi-N-Private-Script/Scripts/kkd.js >> /qx-scripts/logs/kkd.log 2>&1
