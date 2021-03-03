@@ -46,3 +46,6 @@ jd_scripts:
     - XP_refreshTOKEN=
     - XP_phone=
     - XP_CASH=
+    #悦动族
+    - YDZ_yuedongzuTOKEN=
+    - YDZ_CASH=5
