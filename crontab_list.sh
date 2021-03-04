@@ -21,5 +21,5 @@
 */6 * * * * node /qx-scripts/repositories/ziye11-JavaScript/Task/iboxpay.js >> /qx-scripts/logs/iboxpay.log 2>&1
 #悦动族
 0,30 0-23 * * * node /qx-scripts/repositories/ziye11-JavaScript/Task/yuedongzu.js >> /qx-scripts/logs/yuedongzu.log 2>&1
-#悦动族
+#全民悦动
 0,30 0-23 * * * node /qx-scripts/repositories/ziye11-JavaScript/Task/qmyd.js >> /qx-scripts/logs/qmyd.log 2>&1
