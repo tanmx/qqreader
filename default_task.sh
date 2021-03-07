@@ -12,10 +12,10 @@ do
   REPO=`echo $LINE | awk '{print $2}'`
   BRANCH=`echo $LINE | awk '{print $3}'`
   if [ ! -d "/qx-scripts/repositories/${NAME}-${REPO}" ];then
-	if [ -z ${BRANCH} ]
-      git clone https://github.com/${NAME}/${REPO} /qx-scripts/repositories/${NAME}-${REPO}
+	if [ -z ${BRANCH} ];then
+		git clone https://github.com/${NAME}/${REPO} /qx-scripts/repositories/${NAME}-${REPO}
 	else
-	  git clone https://github.com/${NAME}/${REPO} /qx-scripts/repositories/${NAME}-${REPO} -b ${BRANCH}
+		git clone https://github.com/${NAME}/${REPO} /qx-scripts/repositories/${NAME}-${REPO} -b ${BRANCH}
 	fi
   fi
 done < ${CONFIG}
