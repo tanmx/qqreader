@@ -21,3 +21,5 @@
 */6 * * * * node /qx-scripts/repositories/6Svip120apk69-gitee_q8qsTAUA_cThxc1RBVUE/Task/iboxpay.js >> /qx-scripts/logs/iboxpay.log 2>&1
 #悦动族
 0,30 0-23 * * * node /qx-scripts/repositories/6Svip120apk69-gitee_q8qsTAUA_cThxc1RBVUE/Task/yuedongzu.js >> /qx-scripts/logs/yuedongzu.log 2>&1
+#步步宝
+0,30 0-23 * * * node /qx-scripts/repositories/6Svip120apk69-gitee_q8qsTAUA_cThxc1RBVUE/Task/bububao.js >> /qx-scripts/logs/bububao.log 2>&1

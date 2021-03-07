@@ -49,6 +49,6 @@ jd_scripts:
     #悦动族
     - YDZ_yuedongzuTOKEN=
     - YDZ_CASH=5
-    #全民悦动
-    - QMYD_qmydTOKEN=
-    - QMYD_CASH=5
+    #步步宝
+    - BBB_bububaoTOKEN
+    - BBB_CASH=888
