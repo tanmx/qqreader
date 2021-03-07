@@ -16,6 +16,7 @@ do
       git clone https://github.com/${NAME}/${REPO} /qx-scripts/repositories/${NAME}-${REPO}
 	else
 	  git clone https://github.com/${NAME}/${REPO} /qx-scripts/repositories/${NAME}-${REPO} -b ${BRANCH}
+	fi
   fi
 done < ${CONFIG}
 
