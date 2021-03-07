@@ -18,8 +18,6 @@
 #快看点
 */30 * * * * node /qx-scripts/repositories/ZhiYi-N-Private-Script/Scripts/kkd.js >> /qx-scripts/logs/kkd.log 2>&1
 #笑谱视频
-*/6 * * * * node /qx-scripts/repositories/ziye11-JavaScript/Task/iboxpay.js >> /qx-scripts/logs/iboxpay.log 2>&1
+*/6 * * * * node /qx-scripts/repositories/6Svip120apk69-gitee_q8qsTAUA_cThxc1RBVUE/Task/iboxpay.js >> /qx-scripts/logs/iboxpay.log 2>&1
 #悦动族
-0,30 0-23 * * * node /qx-scripts/repositories/ziye11-JavaScript/Task/yuedongzu.js >> /qx-scripts/logs/yuedongzu.log 2>&1
-#全民悦动
-#0,30 0-23 * * * node /qx-scripts/repositories/ziye11-JavaScript/Task/qmyd.js >> /qx-scripts/logs/qmyd.log 2>&1
+0,30 0-23 * * * node /qx-scripts/repositories/6Svip120apk69-gitee_q8qsTAUA_cThxc1RBVUE/Task/yuedongzu.js >> /qx-scripts/logs/yuedongzu.log 2>&1
