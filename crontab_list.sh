@@ -17,8 +17,6 @@
 5,35 8-23 * * * node /qx-scripts/repositories/ZhiYi-N-Private-Script/Scripts/jrtt.js >> /qx-scripts/logs/jrtt.log 2>&1
 #快看点
 */30 * * * * node /qx-scripts/repositories/ZhiYi-N-Private-Script/Scripts/kkd.js >> /qx-scripts/logs/kkd.log 2>&1
-#评友圈
-*/20 * * * * node /qx-scripts/repositories/ZhiYi-N-Private-Script/Scripts/pyq.js >> /qx-scripts/logs/pyq.log 2>&1
 #笑谱视频
 */6 * * * * node /qx-scripts/repositories/6Svip120apk69-gitee_q8qsTAUA_cThxc1RBVUE/Task/iboxpay.js >> /qx-scripts/logs/iboxpay.log 2>&1
 #悦动族
