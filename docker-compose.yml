@@ -45,10 +45,13 @@ jd_scripts:
     #笑谱视频
     - XP_refreshTOKEN=
     - XP_phone=
-    - XP_CASH=
+    - XP_CASH=888
     #悦动族
     - YDZ_yuedongzuTOKEN=
-    - YDZ_CASH=5
+    - YDZ_CASH=888
     #步步宝
-    - BBB_bububaoTOKEN
+    - BBB_bububaoTOKEN=
     - BBB_CASH=888
+    #评有圈
+    - PYQUA=
+    - PYQAD=
