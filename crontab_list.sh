@@ -8,7 +8,7 @@
 #中青看点
 */7 */2 * * * node /qx-scripts/repositories/Sunert-Scripts/Task/youth.js >> /qx-scripts/logs/youth.log 2>&1
 #百度极速版
-*/30 * * * * node /qx-scripts/repositories/Sunert-Scripts/Task/baidu_speed.js >> /qx-scripts/logs/baidu_speed.log 2>&1
+*/30 */5 * * * node /qx-scripts/repositories/Sunert-Scripts/Task/baidu_speed.js >> /qx-scripts/logs/baidu_speed.log 2>&1
 #快手极速版
 15 19 * * * node /qx-scripts/repositories/Sunert-Scripts/Task/kuaishou.js >> /qx-scripts/logs/kuaishou.log 2>&1
 #喜玛拉雅
