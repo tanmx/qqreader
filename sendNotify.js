@@ -2,7 +2,7 @@
  * @Author: lxk0301 https://gitee.com/lxk0301
  * @Date: 2020-08-19 16:12:40 
  * @Last Modified by: lxk0301
- * @Last Modified time: 2021-2-20 17:52:54
+ * @Last Modified time: 2021-3-16 9:52:54
  */
 const querystring = require("querystring");
 const $ = new Env();
@@ -19,13 +19,17 @@ let BARK_SOUND = '';
 
 
 // =======================================telegram机器人通知设置区域===========================================
-//此处填你telegram bot 的Token，例如：1077xxx4424:AAFjv0FcqxxxxxxgEMGfi22B4yh15R5uw
+//此处填你telegram bot 的Token，telegram机器人通知推送必填项.例如：1077xxx4424:AAFjv0FcqxxxxxxgEMGfi22B4yh15R5uw
 //(环境变量名 TG_BOT_TOKEN)
 let TG_BOT_TOKEN = '';
-//此处填你接收通知消息的telegram用户的id，例如：129xxx206
+//此处填你接收通知消息的telegram用户的id，telegram机器人通知推送必填项.例如：129xxx206
 //(环境变量名 TG_USER_ID)
 let TG_USER_ID = '';
-
+//tg推送HTTP代理设置(不懂可忽略,telegram机器人通知推送功能中非必填)
+let TG_PROXY_HOST = '';//例如:127.0.0.1(环境变量名:TG_PROXY_HOST)
+let TG_PROXY_PORT = '';//例如:1080(环境变量名:TG_PROXY_PORT)
+//Telegram api自建的反向代理地址(不懂可忽略,telegram机器人通知推送功能中非必填),默认tg官方api(环境变量名:TG_API_HOST)
+let TG_API_HOST = 'api.telegram.org'
 // =======================================钉钉机器人通知设置区域===========================================
 //此处填你钉钉 bot 的webhook，例如：5a544165465465645d0f31dca676e7bd07415asdasd
 //(环境变量名 DD_BOT_TOKEN)
@@ -55,7 +59,7 @@ let QYWX_AM = '';
 let IGOT_PUSH_KEY = '';
 
 // =======================================push+设置区域=======================================
-//官方文档：https://pushplus.hxtrip.com/
+//官方文档：http://www.pushplus.plus/
 //PUSH_PLUS_TOKEN：微信扫码登录后一对一推送或一对多推送下面的token(您的Token)，不提供PUSH_PLUS_USER则默认为一对一推送
 //PUSH_PLUS_USER： 一对多推送的“群组编码”（一对多推送下面->您的群组(如无则新建)->群组编码，如果您是创建群组人。也需点击“查看二维码”扫描绑定，否则不能接受群组消息推送）
 let PUSH_PLUS_TOKEN = '';
@@ -97,6 +101,9 @@ if (process.env.TG_BOT_TOKEN) {
 if (process.env.TG_USER_ID) {
   TG_USER_ID = process.env.TG_USER_ID;
 }
+if (process.env.TG_PROXY_HOST) TG_PROXY_HOST = process.env.TG_PROXY_HOST;
+if (process.env.TG_PROXY_PORT) TG_PROXY_PORT = process.env.TG_PROXY_PORT;
+if (process.env.TG_API_HOST) TG_API_HOST = process.env.TG_API_HOST;
 
 if (process.env.DD_BOT_TOKEN) {
   DD_BOT_TOKEN = process.env.DD_BOT_TOKEN;
@@ -128,7 +135,7 @@ if (process.env.PUSH_PLUS_USER) {
 
 async function sendNotify(text, desp, params = {}) {
   //提供6种通知
-  desp += `\n本脚本开源免费使用 By：https://gitee.com/lxk0301/jd_docker`;
+  desp += `\n\n本脚本开源免费使用 By：https://gitee.com/lxk0301/jd_docker`;
   await Promise.all([
     serverNotify(text, desp),//微信server酱
     pushPlusNotify(text, desp)//pushplus(推送加)
@@ -168,7 +175,7 @@ function serverNotify(text, desp, timeout = 2100) {
               data = JSON.parse(data);
               //server酱和Server酱·Turbo版的返回json格式不太一样
               if (data.errno === 0 || data.data.errno === 0 ) {
-                console.log('server酱发送通知消息成功\n')
+                console.log('server酱发送通知消息成功🎉\n')
               } else if (data.errno === 1024) {
                 // 一分钟内发送相同的内容会触发
                 console.log(`server酱发送通知消息异常: ${data.errmsg}\n`)
@@ -242,7 +249,7 @@ function CoolPush(text, desp) {
           } else {
             data = JSON.parse(data);
             if (data.code === 200) {
-              console.log(`酷推发送${pushMode(QQ_MODE)}通知消息成功\n`)
+              console.log(`酷推发送${pushMode(QQ_MODE)}通知消息成功🎉\n`)
             } else if (data.code === 400) {
               console.log(`QQ酷推(Cool Push)发送${pushMode(QQ_MODE)}推送失败：${data.msg}\n`)
             } else if (data.code === 503) {
@@ -281,7 +288,7 @@ function BarkNotify(text, desp, params={}) {
           } else {
             data = JSON.parse(data);
             if (data.code === 200) {
-              console.log('Bark APP发送通知消息成功\n')
+              console.log('Bark APP发送通知消息成功🎉\n')
             } else {
               console.log(`${data.message}\n`);
             }
@@ -302,20 +309,21 @@ function BarkNotify(text, desp, params={}) {
 function tgBotNotify(text, desp) {
   return  new Promise(resolve => {
     if (TG_BOT_TOKEN && TG_USER_ID) {
+      desp = `${desp.replace(/_/g, "\\_")}`;//支持markdown后，带有_会导致推送失败，转义一下
       const options = {
-        url: `https://api.telegram.org/bot${TG_BOT_TOKEN}/sendMessage`,
-        body: `chat_id=${TG_USER_ID}&text=${text}\n\n${desp}&disable_web_page_preview=true`,
+        url: `https://${TG_API_HOST}/bot${TG_BOT_TOKEN}/sendMessage`,
+        body: `chat_id=${TG_USER_ID}&text=${text}\n\n${desp}&disable_web_page_preview=true&parse_mode=Markdown`,
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded'
         }
       }
-      if (process.env.TG_PROXY_HOST && process.env.TG_PROXY_PORT) {
+      if (TG_PROXY_HOST && TG_PROXY_PORT) {
         const tunnel = require("tunnel");
         const agent = {
           https: tunnel.httpsOverHttp({
             proxy: {
-              host: process.env.TG_PROXY_HOST,
-              port: process.env.TG_PROXY_PORT * 1
+              host: TG_PROXY_HOST,
+              port: TG_PROXY_PORT * 1
             }
           })
         }
@@ -329,7 +337,7 @@ function tgBotNotify(text, desp) {
           } else {
             data = JSON.parse(data);
             if (data.ok) {
-              console.log('Telegram发送通知消息完成。\n')
+              console.log('Telegram发送通知消息成功🎉。\n')
             } else if (data.error_code === 400) {
               console.log('请主动给bot发送一条消息并检查接收用户ID是否正确。\n')
             } else if (data.error_code === 401){
@@ -377,7 +385,7 @@ function ddBotNotify(text, desp) {
           } else {
             data = JSON.parse(data);
             if (data.errcode === 0) {
-              console.log('钉钉发送通知消息完成。\n')
+              console.log('钉钉发送通知消息成功🎉。\n')
             } else {
               console.log(`${data.errmsg}\n`)
             }
@@ -438,7 +446,7 @@ function qywxBotNotify(text, desp) {
           } else {
             data = JSON.parse(data);
             if (data.errcode === 0) {
-              console.log('企业微信发送通知消息完成。\n');
+              console.log('企业微信发送通知消息成功🎉。\n');
             } else {
               console.log(`${data.errmsg}\n`);
             }
@@ -464,7 +472,7 @@ function ChangeUserId(desp) {
     for (let i = 0; i < userIdTmp.length; i++) {
       const count = "账号" + (i + 1);
       const count2 = "签到号 " + (i + 1);
-      if (desp.match(count) || desp.match(count2)) {
+      if (desp.match(count2)) {
         userId = userIdTmp[i];
       }
     }
@@ -564,7 +572,7 @@ function qywxamNotify(text, desp) {
             } else {
               data = JSON.parse(data);
               if (data.errcode === 0) {
-                console.log('成员ID:' + ChangeUserId(desp) + '企业微信应用消息发送通知消息完成。\n');
+                console.log('成员ID:' + ChangeUserId(desp) + '企业微信应用消息发送通知消息成功🎉。\n');
               } else {
                 console.log(`${data.errmsg}\n`);
               }
@@ -608,7 +616,7 @@ function iGotNotify(text, desp, params={}){
           } else {
             if(typeof data === 'string') data = JSON.parse(data);
             if (data.ret === 0) {
-              console.log('iGot发送通知消息成功\n')
+              console.log('iGot发送通知消息成功🎉\n')
             } else {
               console.log(`iGot发送通知消息失败：${data.errMsg}\n`)
             }
@@ -637,7 +645,7 @@ function pushPlusNotify(text, desp) {
         topic: `${PUSH_PLUS_USER}`
       };
       const options = {
-        url: `https://pushplus.hxtrip.com/send`,
+        url: `http://www.pushplus.plus/send`,
         body: JSON.stringify(body),
         headers: {
           'Content-Type': ' application/json'
