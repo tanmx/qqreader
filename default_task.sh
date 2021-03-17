@@ -11,6 +11,7 @@ do
   NAME=`echo $LINE | awk '{print $1}'`
   REPO=`echo $LINE | awk '{print $2}'`
   BRANCH=`echo $LINE | awk '{print $3}'`
+  #是否指定了branch
   if [ ! -d "/qx-scripts/repositories/${NAME}-${REPO}" ];then
 	if [ -z ${BRANCH} ];then
 		git clone https://github.com/${NAME}/${REPO} /qx-scripts/repositories/${NAME}-${REPO}
@@ -27,10 +28,17 @@ echo "复制依赖文件"
 echo "定时任务更新代码，git 拉取最新代码，并安装更新依赖..."
 for i in `ls /qx-scripts/repositories/`
 do
-  if [ ${i} != 'Zero-S1-xmly_speed' ];then
+  #非python npm install
+  if [ ${i} != 'Zero-S1-xmly_speed|srcrs-UnicomTask' ];then
 	git -C /qx-scripts/repositories/${i} pull
 	npm install --prefix /qx-scripts/repositories/${i}
+  #python pip3 install
+  else
+  	git -C /qx-scripts/repositories/${i} pull
+    pip3 install -r /qx-scripts/repositories/${i}/requirements.txt
   fi
+  #联通脚本配置config
+  echo "$USERS_COVER" > /qx-scripts/repositories/srcrs-UnicomTask/config.json
 done
 echo "加载最新task"
 crontab /qx-scripts/crontab_list.sh
