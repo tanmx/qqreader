@@ -29,7 +29,7 @@ echo "定时任务更新代码，git 拉取最新代码，并安装更新依赖.
 for i in `ls /qx-scripts/repositories/`
 do
   #非python npm install
-  if test -z "$(ls ${i} | grep .py)";then
+  if test -z "$(ls /qx-scripts/repositories/${i} | grep .py)";then
 	git -C /qx-scripts/repositories/${i} pull
 	npm install --prefix /qx-scripts/repositories/${i}
   #python pip3 install
