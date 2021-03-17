@@ -39,9 +39,6 @@ jd_scripts:
     - JRTTFARMKEY=
     - JRTTREADURL=
     - JRTTREADKEY=
-    #快看点
-    - KKDHEADER=
-    - KKDCOOKIE=
     #笑谱视频
     - XP_refreshTOKEN=
     - XP_phone=
