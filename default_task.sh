@@ -37,8 +37,6 @@ do
   	git -C /qx-scripts/repositories/${i} pull
     pip3 install -r /qx-scripts/repositories/${i}/requirements.txt
   fi
-  #联通脚本配置config
-  echo "$USERS_COVER" > /qx-scripts/repositories/srcrs-UnicomTask/config.json
 done
 echo "加载最新task"
 crontab /qx-scripts/crontab_list.sh
