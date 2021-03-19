@@ -16,6 +16,6 @@
 #今日头条极速版
 5,35 8-23 * * * node /qx-scripts/repositories/ZhiYi-N-Private-Script/Scripts/jrtt.js >> /qx-scripts/logs/jrtt.log 2>&1
 #笑谱视频
-*/6 * * * * node /qx-scripts/repositories/6Svip120apk69-gitee_q8qsTAUA_cThxc1RBVUE/Task/iboxpay.js >> /qx-scripts/logs/iboxpay.log 2>&1
+#*/6 * * * * node /qx-scripts/repositories/6Svip120apk69-gitee_q8qsTAUA_cThxc1RBVUE/Task/iboxpay.js >> /qx-scripts/logs/iboxpay.log 2>&1
 #步步宝
-0,30 0-23 * * * node /qx-scripts/repositories/6Svip120apk69-gitee_q8qsTAUA_cThxc1RBVUE/Task/bububao.js >> /qx-scripts/logs/bububao.log 2>&1
+#0,30 0-23 * * * node /qx-scripts/repositories/6Svip120apk69-gitee_q8qsTAUA_cThxc1RBVUE/Task/bububao.js >> /qx-scripts/logs/bububao.log 2>&1
