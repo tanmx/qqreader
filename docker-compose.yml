@@ -32,6 +32,10 @@ jd_scripts:
     - BAIDU_TASK=true
     #快手极速版
     - KS_TOKEN=
+    #快看点
+    - KKDHEADER=
+    - KKDCOOKIE=
+    - KKDSIGN=
     #今日头条极速版
     - JRTTSIGNURL=
     - JRTTSIGNKEY=
