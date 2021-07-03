@@ -22,8 +22,8 @@ do
 done < ${CONFIG}
 
 echo "复制依赖文件"
-\cp /qx-scripts/package.json /qx-scripts/repositories/ZhiYi-N-Private-Script/package.json
-\cp /qx-scripts/sendNotify.js /qx-scripts/repositories/ZhiYi-N-Private-Script/Scripts/sendNotify.js
+\cp /qx-scripts/package.json /qx-scripts/repositories/Ariszy-Private-Script/package.json
+\cp /qx-scripts/sendNotify.js /qx-scripts/repositories/Ariszy-Private-Script/Scripts/sendNotify.js
 
 echo "定时任务更新代码，git 拉取最新代码，并安装更新依赖..."
 for i in `ls /qx-scripts/repositories/`
