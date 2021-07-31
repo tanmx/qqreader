@@ -14,8 +14,10 @@ do
   #是否指定了branch
   if [ ! -d "/qx-scripts/repositories/${NAME}-${REPO}" ];then
 	if [ -z ${BRANCH} ];then
+	        echo "pull from https://github.com/${NAME}/${REPO}"
 		git clone https://github.com/${NAME}/${REPO} /qx-scripts/repositories/${NAME}-${REPO}
 	else
+	        echo "pull from https://github.com/${NAME}/${REPO} ${BRANCH}"
 		git clone https://github.com/${NAME}/${REPO} /qx-scripts/repositories/${NAME}-${REPO} -b ${BRANCH}
 	fi
   fi
